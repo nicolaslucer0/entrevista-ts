@@ -1,35 +1,31 @@
-import { useState } from "react";
 import styled from "styled-components";
+import "./Home.css";
 
-const Padding = styled.div`
-  padding: 2em;
+const FlexContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3em;
+`;
+
+const Title = styled.h1`
+  font-size: 30px;
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #673ab7, #2196f3);
 `;
 
 const Home = () => {
-  const [pokemons, setPokemons] = useState([]);
-
-  const URL = "https://pokeapi.co/api/v2/type/{POKEMON_TYPE}";
+  //const URL = "https://reqres.in/api/users";
 
   return (
-    <Padding>
-      <select placeholder="Nombre de pokemon">
-        <option value="">Seleccionar</option>
-        <option value="normal">Normal</option>
-        <option value="electric">Electic</option>
-        <option value="water">Water</option>
-        <option value="fire">Fire</option>
-        <option value="ghost">Ghost</option>
-      </select>
-      <button>Buscar</button>
-
-      {!!pokemons && (
-        <div>
-          {pokemons.map((p: any) => (
-            <div key={p.pokemon.id}>{p.pokemon.name}</div>
-          ))}
-        </div>
-      )}
-    </Padding>
+    <FlexContainer>
+      <Title>Lista de usuarios: </Title>
+    </FlexContainer>
   );
 };
 
